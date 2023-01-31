@@ -10,15 +10,20 @@
 A mini-game in Ruby.
 Practice exercise from The Hacking Project.
 
-# Roadmap
+## How to play
 
-- [x] version 1
-- [ ] version 2
-    - [ ] add new human player
-- [ ] version 3
-    - [ ] add ennemies
+```bash
+ruby app.rb
+```
 
 ## Requirements
 
--`ruby '2.7.7'` and above
+- `ruby '2.7.7'` and above
 
+## Roadmap
+
+- [x] version 1
+- [x] version 2
+    - [x] add new human player
+- [ ] version 3
+    - [ ] add enemies
