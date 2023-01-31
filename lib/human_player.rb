@@ -9,9 +9,9 @@ class HumanPlayer < Player
   end
 
   def show_state
-    puts "Vous avez :"
+    puts "\nVous avez :"
     puts "♥ \e[4m#{@life_points}\e[24m point#{@life_points > 1 ? 's' : ''} de vie"
-    puts "✂︎ une arme de niveau \e[4m#{@weapon_level}\e[24m"
+    puts "► une arme de niveau \e[4m#{@weapon_level}\e[24m"
 
     # super
     # puts "-> une arme de niveau \e[4m#{@weapon_level}\e[24m"

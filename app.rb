@@ -110,18 +110,19 @@ def perform_app_v3
   # Making the player fights with enemies
   puts "\n\nAU COMBAT !\n"
   i = 0
-  while my_game.still_ongoing?
+  begin
     i += 1
     puts "\n––> tour #{i} <––"
 
+    my_game.new_players_in_sight
     my_game.show_players
-    choice = my_game.get_choice
+    choice = my_game.fetch_choice
     puts "\n"
     my_game.run_action(choice)
 
     puts "\nRiposte des opposants :"
     my_game.enemies_attack
-  end
+  end while my_game.still_ongoing?
 
   # Ending
   my_game.end

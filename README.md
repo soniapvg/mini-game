@@ -27,4 +27,4 @@ ruby app.rb
     - [x] add new human player
     - [x] add enemies
 - [x] version 3
-    - [] add a lot more enemies
+    - [x] add more enemies
