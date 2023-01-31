@@ -110,7 +110,7 @@ def perform_app_v3
   # Making the player fights with enemies
   puts "\n\nAU COMBAT !\n"
   i = 0
-  begin
+  loop do
     i += 1
     puts "\n––> tour #{i} <––"
 
@@ -122,7 +122,8 @@ def perform_app_v3
 
     puts "\nRiposte des opposants :"
     my_game.enemies_attack
-  end while my_game.still_ongoing?
+    break unless my_game.still_ongoing?
+  end
 
   # Ending
   my_game.end
