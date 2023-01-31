@@ -10,7 +10,7 @@ require_relative 'lib/human_player'
 #############
 
 def perform_app_v1
-  puts "\n\n~~~~~~~~~~\nMINI JEU V1\n~~~~~~~~~~\n"
+  puts "\n\n~~~~~~~~~~~\nMINI JEU V1\n~~~~~~~~~~~"
 
   # Creating 2 players
   player1 = Player.new('Josiane', 34)
@@ -42,10 +42,10 @@ end
 #############
 
 def perform_app_v2
-  puts "\n\n~~~~~~~~~~\nMINI JEU V2\n~~~~~~~~~~\n"
+  puts "\n\n~~~~~~~~~~~\nMINI JEU V2\n~~~~~~~~~~~"
 
   # Creating player and enemies
-  puts 'Quel est votre prénom ?'
+  puts "\nQuel est votre prénom ?"
   print '> '
   name = gets.chomp
   player1 = HumanPlayer.new(name, 36)
@@ -95,11 +95,45 @@ def request_action(enemies)
 end
 
 #############
+# v3
+#############
+
+def perform_app_v3
+  puts "\n\n~~~~~~~~~~~\nMINI JEU V3\n~~~~~~~~~~~"
+
+  # Launching game
+  puts "\nQuel est votre prénom ?"
+  print '> '
+  name = gets.chomp
+  my_game = Game.new(name)
+
+  # Making the player fights with enemies
+  puts "\n\nAU COMBAT !\n"
+  i = 0
+  while my_game.still_ongoing?
+    i += 1
+    puts "\n––> tour #{i} <––"
+
+    my_game.show_players
+    choice = my_game.get_choice
+    puts "\n"
+    my_game.run_action(choice)
+
+    puts "\nRiposte des opposants :"
+    my_game.enemies_attack
+  end
+
+  # Ending
+  my_game.end
+end
+
+#############
 # CLI menu
 #############
 
-puts "Quelle version voulez-vous jouer ?"
-print "\n[1] ou [2] > "
+puts "\nBienvenue !"
+puts "\nQuelle version voulez-vous jouer ?"
+print "\n[1] ou [2] ou [3] > "
 choice = gets.chomp
 
 case choice
@@ -107,4 +141,6 @@ when '1'
   perform_app_v1
 when '2'
   perform_app_v2
+when '3'
+  perform_app_v3
 end

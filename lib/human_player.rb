@@ -9,9 +9,9 @@ class HumanPlayer < Player
   end
 
   def show_state
-    puts "\e[#{@color}mVous\e[0m avez :"
-    puts "-> \e[4m#{@life_points}\e[24m point#{@life_points > 1 ? 's' : ''} de vie"
-    puts "-> une arme de niveau \e[4m#{@weapon_level}\e[24m"
+    puts "Vous avez :"
+    puts "♥ \e[4m#{@life_points}\e[24m point#{@life_points > 1 ? 's' : ''} de vie"
+    puts "✂︎ une arme de niveau \e[4m#{@weapon_level}\e[24m"
 
     # super
     # puts "-> une arme de niveau \e[4m#{@weapon_level}\e[24m"
@@ -28,7 +28,7 @@ class HumanPlayer < Player
       @weapon_level = new_weapon_level
       puts 'Youhou ! elle est meilleure que ton arme actuelle : tu la prends.'
     else
-      puts "M@*#$... elle n'est pas mieux que ton arme actuelle..."
+      puts "Dommage... elle n'est pas mieux que ton arme actuelle."
     end
   end
 

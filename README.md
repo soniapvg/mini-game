@@ -25,5 +25,6 @@ ruby app.rb
 - [x] version 1
 - [x] version 2
     - [x] add new human player
-- [ ] version 3
-    - [ ] add enemies
+    - [x] add enemies
+- [x] version 3
+    - [] add a lot more enemies
